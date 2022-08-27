@@ -1,6 +1,6 @@
 import Navbar from "./Navbar/Navbar"
 import { useState, useEffect, useRef } from "react"
-import { getThemePreferences, toggleThemePreferences, useNonInitialEffect } from "../utils/themeFuncs"
+import { getThemePreferences} from "../utils/themeFuncs"
 
 const Layout = ({children}: any) => {
     const [darkTheme, setDarkTheme] = useState(false)

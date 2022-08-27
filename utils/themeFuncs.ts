@@ -20,23 +20,23 @@ const toggleThemePreferences = () => {
 }
 
 // React hook that is similar to useEffect but does not run on initial render
-const useNonInitialEffect = (effect: EffectCallback, deps?: DependencyList) => {
-    const initialRender = useRef(true);
+// const useNonInitialEffect = (effect: EffectCallback, deps?: DependencyList) => {
+//     const initialRender = useRef(true);
 
-    useEffect(() => {
-        //let effectReturns: void | (() => void | undefined) = () => {};
-        let effectReturns: any = () => {};
+//     useEffect(() => {
+//         //let effectReturns: void | (() => void | undefined) = () => {};
+//         let effectReturns: any = () => {};
 
-        if (initialRender.current) {
-            initialRender.current = false;
-        } else {
-            effectReturns = effect();
-        }
+//         if (initialRender.current) {
+//             initialRender.current = false;
+//         } else {
+//             effectReturns = effect();
+//         }
 
-        if (effectReturns && typeof effectReturns === "function") {
-            return effectReturns;
-        }
-    }, deps);
-};
+//         if (effectReturns && typeof effectReturns === "function") {
+//             return effectReturns;
+//         }
+//     }, deps);
+// };
 
-export {getThemePreferences, toggleThemePreferences, useNonInitialEffect}
+export {getThemePreferences, toggleThemePreferences}

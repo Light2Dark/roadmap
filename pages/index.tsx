@@ -7,16 +7,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Roadmap</title>
         <meta name="description" content="Roadmap learning platform" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <p className='p-2 text-2xl'>Hello</p>
-      </main>
-
-      <footer>
-
-      </footer>
+      <h1 className='text-3xl font-bold'>My Roadmaps</h1>
     </div>
   )
 }

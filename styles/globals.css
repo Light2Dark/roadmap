@@ -6,8 +6,17 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Nunito", sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 a {
@@ -15,6 +24,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* .nav > .active {
+  text-decoration: underline wavy rgb(240, 190, 97);
+} */

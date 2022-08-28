@@ -10,24 +10,51 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  
+  # build:
+  #   runs-on: ubuntu-latest
 
+  #   strategy:
+  #     matrix:
+  #       node-version: [12.x, 14.x, 16.x]
+  #       # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Use Node.js ${{ matrix.node-version }}
+  #     uses: actions/setup-node@v3
+  #     with:
+  #       node-version: ${{ matrix.node-version }}
+  #       cache: 'npm'
+  #   - run: npm run build --if-present
+    
+  test_setup:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    outputs:
+      preview_url: ${{ steps.waitForVercelPreviewDeployment.outputs.url }}
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm run build --if-present   
-    # - run: npm test-e2e
-    
-    # - run: npm ci
-    # - run: npm test
+      - name: Wait for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        id: waitForVercelPreviewDeployment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
+          
+  test_e2e:
+    needs: test_setup
+    name: Playwright tests
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare testing env
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - name: Run tests
+        run: npm run test-e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: ${{ needs.test_setup.outputs.preview_url }}

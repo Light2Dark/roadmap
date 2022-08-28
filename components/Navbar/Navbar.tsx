@@ -24,7 +24,7 @@ const Navbar = ({darkTheme, setDarkTheme}: ThemeProps) => {
     return (
         <div className="flex flex-row items-center px-2 bg-dark-blue text-pale-cream fixed w-full">
             <Link href="/">
-                <a><Image src="/smolwafflenotext.svg" height={60} width={60} /></a>
+                <a><Image src="/smolwafflenotext.svg" height={60} width={60} alt={"Smolwaffle Logo"} /></a>
             </Link>
 
             {/* Mobile sidebar bars, they should appear as the last element on small screens */}

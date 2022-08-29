@@ -1,0 +1,14 @@
+type Query {
+    roadmap(id: ID!): Roadmap
+}
+
+type Roadmap {
+    id: ID!
+    title: String!
+}
+
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}

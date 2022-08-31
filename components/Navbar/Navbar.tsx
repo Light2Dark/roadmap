@@ -2,6 +2,7 @@ import Image from "next/image"
 import Toggle from "./Toggle"
 import Link from "next/link"
 import { useState } from "react"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export interface ThemeProps {
     darkTheme: boolean
@@ -16,6 +17,7 @@ const Bar = () => {
 
 const Navbar = ({darkTheme, setDarkTheme}: ThemeProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false)
+    const {data: session} = useSession()
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen)
@@ -37,15 +39,21 @@ const Navbar = ({darkTheme, setDarkTheme}: ThemeProps) => {
 
             <div className={`nav md:flex flex-row gap-4 items-center ml-auto ${sidebarOpen ? "flex flex-col fixed top-20 text-pale-cream right-3 w-60 rounded-md py-2 bg-dark-blue/90" : "hidden"}`}>
                 <Link href = "/maker">
-                    <a>Maker</a>
+                    <a className="px-2 py-1 hover:bg-black/30 transition-colors rounded-lg">Maker</a>
                 </Link>
 
-                <Link href = "/community">
+                {/* <Link href = "/community">
                     <a>Community</a>
-                </Link>
+                </Link> */}
 
-                <button>Log In</button>
-                <button>Sign Up</button>
+                {
+                    session ? (
+                        <button onClick={() => signOut()} className="bg-red-200 text-black px-2 py-1 rounded-lg hover:bg-red-300 transition-all hover:drop-shadow-sm">Log Out</button>
+                    ) :
+                    (
+                        <button onClick={() => signIn()} className="bg-cyan-200 text-black px-2 py-1 rounded-lg hover:bg-cyan-300 transition-all hover:drop-shadow-sm">Log In</button>
+                    )
+                }
             </div>
 
             <Toggle darkTheme={darkTheme} setDarkTheme={setDarkTheme} classProps={"ml-auto md:ml-4 order-2 md:order-last mr-2"} />

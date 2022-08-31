@@ -2,6 +2,7 @@ import Image from "next/image"
 import Toggle from "./Toggle"
 import Link from "next/link"
 import { useState } from "react"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export interface ThemeProps {
     darkTheme: boolean
@@ -16,6 +17,7 @@ const Bar = () => {
 
 const Navbar = ({darkTheme, setDarkTheme}: ThemeProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false)
+    const {data: session} = useSession()
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen)
@@ -44,8 +46,14 @@ const Navbar = ({darkTheme, setDarkTheme}: ThemeProps) => {
                     <a>Community</a>
                 </Link>
 
-                <button>Log In</button>
-                <button>Sign Up</button>
+                {
+                    session ? (
+                        <button onClick={() => signOut()}>Log Out</button>
+                    ) :
+                    (
+                        <button onClick={() => signIn()}>Log In</button>
+                    )
+                }
             </div>
 
             <Toggle darkTheme={darkTheme} setDarkTheme={setDarkTheme} classProps={"ml-auto md:ml-4 order-2 md:order-last mr-2"} />

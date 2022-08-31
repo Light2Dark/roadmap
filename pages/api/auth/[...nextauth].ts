@@ -12,7 +12,9 @@ export default NextAuth({
     FacebookProvider({
         clientId: process.env.FACEBOOK_CLIENT_ID || "",
         clientSecret: process.env.FACEBOOK_CLIENT_SECRET || ""
-    })
+    }),
+    // EMAIL: NEED DB SO IN THE FUTURE WILL DO THIS
+    // https://next-auth.js.org/configuration/providers/email
   ],
 
   // Callbacks are asynchronous functions you can use to control what happens when an action is performed.
@@ -25,5 +27,12 @@ export default NextAuth({
       }
       return true // Do different verification for other providers that don't have `email_verified`, true continues with sign In flow
     }
+  },
+
+  theme: {
+    colorScheme: "auto", // "auto" | "dark" | "light"
+    //brandColor: "", // Hex color code
+    logo: "../../smolwafflenotext.svg", // Absolute URL to image
+    //buttonText: "" // Hex color code
   }
 })

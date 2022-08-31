@@ -3,7 +3,7 @@ Roadmap is inspired by roadmap.sh to create a modularized learning platform wher
 ## Feature Set
 - Roadmap maker for users to create their own roadmap
 - Community roadmaps for users to browse community-made roadmaps
-- Group roadmaps for class-based roadmaps shared among all members of the class
+- Interactive roadmaps for modularized learning all in one place!
 
 ## Design Choices
 - Next.js: Server side rendering is needed for certain pages and Next.js is the best for dynamic rendering using React and yes, Typescript.
@@ -12,8 +12,8 @@ Roadmap is inspired by roadmap.sh to create a modularized learning platform wher
 - GraphQL: Type safety from end-to-end plus declarative fetching for performance
 - Prisma: Bridges the backend and frontend
 - Docker: Containerized so that project is scalable accross many instances and can be deployed using various methods (Serverless, Cloud Run, etc.)
-- Vitest: Unit testing for critical components
-- Playwright: E2E testing to ensure anything pushed to deployment will run safely, no breaking changes
+- Vitest: Unit testing for critical components (NOT YET)
+- Playwright: E2E testing to ensure anything pushed to deployment will run safely, no breaking changes (NOT YET)
 
 ## Getting Started
 
@@ -45,9 +45,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 ## Contribution
 
-This is a pretty early concept so tickets will be vague.
-- Icon for the website
-- 
+This is a pretty early concept so I'm sorry that the requests are vague. Thanks for seeing this tho! :D
 
 ## Learn More
 

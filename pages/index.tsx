@@ -8,7 +8,6 @@ const Home: NextPage = () => {
         <title>Roadmap</title>
         <meta name="description" content="Roadmap learning platform" />
       </Head>
-
       <h1 className='text-3xl font-bold'>My Roadmaps</h1>
     </div>
   )

@@ -1,0 +1,12 @@
+services:
+  database:
+    platform: linux
+    image: mysql
+    restart: always
+    environment: 
+      - MYSQL_DATABASE=mydb
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    ports:
+      - "3307:3306"

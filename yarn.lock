@@ -1077,6 +1077,11 @@
     "@types/node" "*"
     "playwright-core" "1.25.1"
 
+"@prisma/engines@4.3.0":
+  "integrity" "sha512-JAyU7+QEpLkVtgVMYBSPQt9sUcgFqA/MdD4mK7yx+ZyDfHQlP+nT1rmqFPZ3MofR0mAha7nr3rx0ZNN46gLp9Q=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines/-/engines-4.3.0.tgz"
+  "version" "4.3.0"
+
 "@repeaterjs/repeater@^3.0.4":
   "integrity" "sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA=="
   "resolved" "https://registry.npmjs.org/@repeaterjs/repeater/-/repeater-3.0.4.tgz"
@@ -3822,6 +3827,13 @@
   "integrity" "sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew=="
   "resolved" "https://registry.npmjs.org/pretty-format/-/pretty-format-3.8.0.tgz"
   "version" "3.8.0"
+
+"prisma@4.3.0":
+  "integrity" "sha512-Ii588H5IsbSun5BwpNQwrayrHKecFEZ6wDoJ7nr2IsqlMblmkA1dextGBObsG9tg+aIVhTrNa7OAbhbvEfqhdQ=="
+  "resolved" "https://registry.npmjs.org/prisma/-/prisma-4.3.0.tgz"
+  "version" "4.3.0"
+  dependencies:
+    "@prisma/engines" "4.3.0"
 
 "promise@^7.1.1":
   "integrity" "sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg=="

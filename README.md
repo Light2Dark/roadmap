@@ -11,8 +11,7 @@ Roadmap is inspired by roadmap.sh to create a modularized learning platform wher
 - Planetscale: Database that's scalable and branching features to prevent blocking changes
 - GraphQL: Type safety from end-to-end plus declarative fetching for performance
 - Prisma: Bridges the backend and frontend
-- Docker: Containerized so that project is scalable accross many instances and can be deployed using various methods (Serverless, Cloud Run, etc.)
-- Vitest: Unit testing for critical components (NOT YET)
+- Vitest: Unit testing for critical components (NOT YET / MAYBE)
 - Playwright: E2E testing to ensure anything pushed to deployment will run safely, no breaking changes (NOT YET)
 
 ## Getting Started

@@ -1,4 +1,4 @@
-import { useEffect, EffectCallback, DependencyList, useRef } from "react"
+// import { useEffect, EffectCallback, DependencyList, useRef } from "react"
 
 // THE 2 FUNCTIONS BELOW ARE SO THAT THEME PREFERENCES PERSISTS OVER MULTIPLE USER VISITS
 const getThemePreferences = () => {

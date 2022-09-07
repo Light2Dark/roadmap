@@ -3840,7 +3840,7 @@
   "resolved" "https://registry.npmjs.org/pretty-format/-/pretty-format-3.8.0.tgz"
   "version" "3.8.0"
 
-"prisma@*", "prisma@4.3.0":
+"prisma@*", "prisma@^4.3.0":
   "integrity" "sha512-Ii588H5IsbSun5BwpNQwrayrHKecFEZ6wDoJ7nr2IsqlMblmkA1dextGBObsG9tg+aIVhTrNa7OAbhbvEfqhdQ=="
   "resolved" "https://registry.npmjs.org/prisma/-/prisma-4.3.0.tgz"
   "version" "4.3.0"

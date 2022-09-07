@@ -14,6 +14,9 @@ Roadmap is inspired by roadmap.sh to create a modularized learning platform wher
 - Vitest: Unit testing for critical components (NOT YET / MAYBE)
 - Playwright: E2E testing to ensure anything pushed to deployment will run safely, no breaking changes (NOT YET)
 
+## Learning Resources
+[One Week GraphQL](https://oneweekgraphql.com/), a fullstack GraphQL course by [Nader Dabit](https://twitter.com/dabit3) and [Lee Robinson](https://twitter.com/leerob) is a great resource to learn GraphQL and Prisma.
+
 ## Getting Started
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -46,12 +49,5 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 This is a pretty early concept so I'm sorry that the requests are vague. Thanks for seeing this tho! :D
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 

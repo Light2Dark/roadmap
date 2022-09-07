@@ -1,4 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
+import { GraphQLContext } from './pages/api/index';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -124,24 +125,24 @@ export type ResolversParentTypes = {
   User: User;
 };
 
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+export type QueryResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   roadmap?: Resolver<Maybe<ResolversTypes['Roadmap']>, ParentType, ContextType, RequireFields<QueryRoadmapArgs, 'id'>>;
 };
 
-export type RoadmapResolvers<ContextType = any, ParentType extends ResolversParentTypes['Roadmap'] = ResolversParentTypes['Roadmap']> = {
+export type RoadmapResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['Roadmap'] = ResolversParentTypes['Roadmap']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+export type UserResolvers<ContextType = GraphQLContext, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   firstName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   lastName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type Resolvers<ContextType = any> = {
+export type Resolvers<ContextType = GraphQLContext> = {
   Query?: QueryResolvers<ContextType>;
   Roadmap?: RoadmapResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
